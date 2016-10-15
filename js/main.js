@@ -1,18 +1,17 @@
 $(document).ready(function() {
 
-  $('input').on('keypress', function(e) {
-    var code = e.keyCode || e.which;
-    if(code == 13) {
+  $('select').on('change', function() {
     var city= $('input').val();
     user.city = city;
-    }
-  });
-
-  $('select').on('change', function() {
     var state= $(this)[0].value;
     user.state = state;
+  });
+
+  $('button').on('click', function() {
     sunrise();
   });
+
+
 
   var user = {
     apiKey: 'c3a8e8342446539e',
